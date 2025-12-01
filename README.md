@@ -10,3 +10,6 @@ A complete monitoring solution that collects CPU, RAM, disk, and network metrics
 
 ## How to Run
 ### 1. Start server
+### 2. Run agent
+### 3. Open dashboard
+Open `dashboard/index.html` in browser.
