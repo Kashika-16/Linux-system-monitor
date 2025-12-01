@@ -1,0 +1,22 @@
+import psutil, socket, json, time, requests
+
+SERVER_URL = "http://localhost:5000/api/metrics"
+HOSTNAME = socket.gethostname()
+
+def collect_metrics():
+    return {
+        "host": HOSTNAME,
+        "timestamp": int(time.time()),
+        "cpu": psutil.cpu_percent(interval=1),
+        "memory": psutil.virtual_memory()._asdict(),
+        "disk": psutil.disk_usage("/")._asdict(),
+        "network": psutil.net_io_counters()._asdict()
+    }
+
+while True:
+    data = collect_metrics()
+    try:
+        requests.post(SERVER_URL, json=data, timeout=5)
+    except:
+        pass
+    time.sleep(10)
