@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linux System Monitor</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>System Monitoring Dashboard</h1>
+  <canvas id="cpuChart" width="400"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
